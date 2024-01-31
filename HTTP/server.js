@@ -24,7 +24,7 @@ const server = http.createServer((req, res) => {
         })
     }
 
-        if (req.url == "/style.css") {
+    if (req.url == "/style.css") {
 
             fs.readFile("./style.css", "utf-8", (err, data) => {
 

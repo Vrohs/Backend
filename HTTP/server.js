@@ -1,10 +1,35 @@
 const http = require("http");
+const fs = require("fs");
 
 
 const server = http.createServer((req, res) => {
 
-    res.write("welcome to the server");
-    res.end();
+
+    // res.write("welcome to server")
+    // res.end()
+    // console.log(req.url)
+
+    if(req.url == "/home.html"){
+
+        fs.readFile("./home.html", "utf-8", (err, data) => {
+
+            if(err){
+
+                res.write("hmmm...can't reach page 🙂")
+            } else {
+
+                res.write(data)
+                res.end()
+            }
+        })
+      
+        // res.write("<h1> home page, you succesfully reached homepage 🌞</h1>")
+        // res.end()
+    } else {
+
+        res.write("unknown")
+        res.end()
+    }
 })
 
 
@@ -12,11 +37,5 @@ const port = 3000;
 
 server.listen(port, (err) => {
 
-    if(err){
-
-        console.log("err");
-    } else {
-
-        console.log(`server is running at port ${port}`)
-    }
+   console.log(`server is running at port: ${port}`)
 })

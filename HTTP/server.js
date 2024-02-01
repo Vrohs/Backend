@@ -1,5 +1,10 @@
 const http = require("http");
 const fs = require("fs");
+const os = require("os");
+
+
+
+// console.log(os.cpus().length);
 
 
 const server = http.createServer((req, res) => {

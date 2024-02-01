@@ -1,0 +1,11 @@
+{
+  "name": "iplogger",
+  "version": "1.0.0",
+  "description": "user req logs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "Vivek Rohtasvi",
+  "license": "MIT"
+}

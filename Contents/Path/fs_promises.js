@@ -52,22 +52,28 @@ const fs = require('fs').promises;
 const path = require('path');
 
 async function readDirRec(dir) {
+    
     let files = await fs.readdir(dir);
+
     for (let file of files) {
         let fullPath = path.join(dir, file);
         
         let stat = await fs.stat(fullPath);
+       
         if (stat.isDirectory()) {
+
             console.log(`Directory: ${fullPath}`);
-            await readDirRec(fullPath); // Recursive call for directories
+            await readDirRec(fullPath); 
         } else {
-            // Check if the file extension is .js
+            
             if (path.extname(file) === '.js') {
-                console.log(`File: ${fullPath}`); // Log only if file is a .js file
+
+                console.log(`File: ${fullPath}`); 
             }
         }
     }
 }
+
 
 readDirRec('./Contents')
     .then(() => console.log('Done reading directories recursively.'))

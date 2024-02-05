@@ -52,7 +52,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-async function readDirRecursively(dir) {
+async function readDirRec(dir) {
 
     let files = await fs.readdir(dir);
     for (let file of files) {
@@ -73,6 +73,6 @@ async function readDirRecursively(dir) {
 }
 
 
-readDirRecursively('./contents')
+readDirRec('./contents')
     .then(() => console.log('Done reading directories recursively.'))
     .catch((err) => console.error('An error occurred:', err));

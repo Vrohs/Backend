@@ -48,11 +48,17 @@
 //     .then(onResolve, onReject)
 
 
+
+
+
+
 const fs = require('fs').promises;
 const path = require('path');
 
+
+
 async function readDirRec(dir) {
-    
+
     let files = await fs.readdir(dir);
 
     for (let file of files) {

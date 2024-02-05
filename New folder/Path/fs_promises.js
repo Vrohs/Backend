@@ -63,7 +63,7 @@ async function readDirRec(dir) {
         if (stat.isDirectory()) {
 
             console.log(`Directory: ${fullPath}`);
-            await readDirRecursively(fullPath); 
+            await readDirRec(fullPath); 
             
         } else {
 

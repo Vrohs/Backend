@@ -1,24 +1,20 @@
 const http = require('http')
 
 
-
 const newServer = http.createServer((req, res) => {
 
-    console.log('new req. receieved!')
-    res.end('Hello')
+    console.log('server started')
+    res.end('hello')
 })
-
 
 
 const port = 3000
 
+newServer.listen(port, (err) => {
 
+    if(err) console.error(err)
 
-newServer.listen(port, () => {
-
-    console.log('server started')
+    console.log(`server running om ${port}`)
 })
-
-
 
 

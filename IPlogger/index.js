@@ -5,7 +5,7 @@ const fs = require('fs');
 const newServer = http.createServer((req, res) => {
 
 
-    console.log(req.headers);
+  //  console.log(req.headers);
    
     let date = new Date("2024");
 

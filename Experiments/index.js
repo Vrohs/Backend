@@ -16,7 +16,9 @@ const port = 3000
 
 newServer.listen(port, () => {
 
-    console.log('server stsrted')
+    console.log('server started')
 })
+
+
 
 
